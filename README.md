@@ -5,6 +5,9 @@
 
 ---
 
+![AWS Task  Architecture ](./images/architecture.png)
+
+
 ## Overview
 
 This repository contains a Terraform script to automate the deployment of infrastructure on AWS, including a Virtual Private Cloud (VPC), two EC2 instances (frontend and backend), an RDS MySQL database, and necessary security groups. The infrastructure is designed to support a basic web application with separate frontend and backend services.
