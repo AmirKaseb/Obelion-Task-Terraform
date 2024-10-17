@@ -5,7 +5,7 @@
 
 ---
 
-![AWS Task  Architecture ](./Architceture.png.png)
+![AWS Task  Architecture ](Architceture.png)
 
 ## Overview
 
