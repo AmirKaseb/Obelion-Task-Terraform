@@ -220,6 +220,8 @@ data "aws_secretsmanager_secret_version" "rds_secret_value" {
 
 # **MySQL RDS (Community Edition, no public access)**
 resource "aws_db_instance" "mysql_rds" {
+  identifier = "obelion-mysql-database" 
+  apply_immediately = true
   allocated_storage    = 8  # 8 GB storage
   storage_type         = "gp2"  # General Purpose SSD
   engine               = "mysql"
@@ -232,6 +234,7 @@ resource "aws_db_instance" "mysql_rds" {
   vpc_security_group_ids = [aws_security_group.Obelio_mysql_sg.id]
   db_subnet_group_name  = aws_db_subnet_group.Obelion-Public-Subnet-Group.name  # Updated reference
   multi_az             = true  # Enable Multi-AZ for availability
+  skip_final_snapshot    = true
   tags = {
     Name = "Obelion_MySqL_Database"
   }
