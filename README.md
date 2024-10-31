@@ -11,6 +11,23 @@
 
 This repository contains a Terraform script to automate the deployment of infrastructure on AWS, including a Virtual Private Cloud (VPC), two EC2 instances (frontend and backend), an RDS MySQL database, and necessary security groups. The infrastructure is designed to support a basic web application with separate frontend and backend services.
 
+
+## Modules
+
+   - VPC Module: Responsible for creating the Virtual Private Cloud and subnets. This module abstracts the networking setup, allowing you to define the CIDR blocks and availability zones easily.
+
+   - Security Groups Module: Manages the security groups associated with the infrastructure. It simplifies the process of configuring inbound and outbound traffic rules for various services.
+
+   - EC2 Module: Handles the deployment of EC2 instances for both the frontend and backend. This module allows you to specify instance types, AMI IDs, and associated security groups in a straightforward manner.
+
+   - RDS Module: Configures the RDS MySQL database instance. It ensures that database credentials are securely managed and can be accessed through AWS Secrets Manager.
+
+   - SNS Module: Sets up AWS Simple Notification Service (SNS) for alerting purposes. This module is designed to manage email notifications for events such as CloudWatch alarms.
+
+   - CloudWatch Module: Monitors the health and performance of EC2 instances. It creates alarms for CPU usage and integrates with the SNS module for notification.
+
+
+
 ## Resources Created
 
 - **VPC**: A Virtual Private Cloud with two public subnets.
