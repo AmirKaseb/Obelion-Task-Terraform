@@ -25,6 +25,8 @@ This repository contains a Terraform script to automate the deployment of infras
    - SNS Module: Sets up AWS Simple Notification Service (SNS) for alerting purposes. This module is designed to manage email notifications for events such as CloudWatch alarms.
 
    - CloudWatch Module: Monitors the health and performance of EC2 instances. It creates alarms for CPU usage and integrates with the SNS module for notification.
+   
+   - Secrets MOdule : Handling the secrets of our RDS Database to avoid hard code the credientials in the terraform code. 
 
 
 
