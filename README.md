@@ -12,6 +12,46 @@
 This repository contains a Terraform script to automate the deployment of infrastructure on AWS, including a Virtual Private Cloud (VPC), two EC2 instances (frontend and backend), an RDS MySQL database, and necessary security groups. The infrastructure is designed to support a basic web application with separate frontend and backend services.
 
 
+## File Hierarchy
+```
+
+├── modules
+│   ├── ec2
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   ├── rds
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   ├── security_groups
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   ├── sns
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   ├── vpc
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   ├── cloudwatch
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── variables.tf
+│   └── secrets
+│       ├── main.tf
+│       ├── outputs.tf
+│       └── variables.tf
+├── main.tf
+├── outputs.tf
+├── provider.tf
+└── variables.tf
+
+
+```
+
 ## Modules
 
    - VPC Module: Responsible for creating the Virtual Private Cloud and subnets. This module abstracts the networking setup, allowing you to define the CIDR blocks and availability zones easily.
