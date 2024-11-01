@@ -1,3 +1,5 @@
+# Create an SNS Topic for Email Notifications
+
 resource "aws_sns_topic" "cpu_alarm_sns" {
   name = "cpu_alarm_sns_topic"
 }

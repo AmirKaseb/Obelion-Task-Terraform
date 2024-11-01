@@ -1,3 +1,5 @@
+# CloudWatch Alarm for Frontend Instance
+
 resource "aws_cloudwatch_metric_alarm" "frontend_cpu_alarm" {
   alarm_name          = "Frontend-High-CPU-Usage"
   comparison_operator = "GreaterThanThreshold"
@@ -15,6 +17,8 @@ resource "aws_cloudwatch_metric_alarm" "frontend_cpu_alarm" {
 
   alarm_actions = [var.sns_topic_arn]
 }
+
+# CloudWatch Alarm for Backend Instance
 
 resource "aws_cloudwatch_metric_alarm" "backend_cpu_alarm" {
   alarm_name          = "Backend-High-CPU-Usage"

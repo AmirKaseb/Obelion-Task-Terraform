@@ -1,9 +1,13 @@
+# Backend instance
+
 resource "aws_instance" "Obelion_backend_instance" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   key_name               = var.key_name
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [var.backend_sg_id]
+
+  # Define the user data to install Docker
 
   user_data = <<-EOF
               #!/bin/bash
@@ -15,6 +19,10 @@ resource "aws_instance" "Obelion_backend_instance" {
               sudo usermod -a -G docker $(whoami)
               sudo chmod 666 /var/run/docker.sock
               newgrp docker
+              sudo apt-get install mysql-server -y
+              sudo systemctl start mysql
+              sudo systemctl enable mysql
+              mysql --version
               EOF
 
   tags = {
@@ -22,12 +30,16 @@ resource "aws_instance" "Obelion_backend_instance" {
   }
 }
 
+# Frontend instance
+
 resource "aws_instance" "Obelion_frontend_instance" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   key_name               = var.key_name
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [var.frontend_sg_id]
+
+  # Define the user data to install Docker
 
   user_data = <<-EOF
               #!/bin/bash

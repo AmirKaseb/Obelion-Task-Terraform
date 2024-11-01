@@ -36,14 +36,11 @@ This repository contains a Terraform script to automate the deployment of infras
 │   │   ├── main.tf
 │   │   ├── outputs.tf
 │   │   ├── variables.tf
-│   ├── cloudwatch
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   ├── variables.tf
-│   └── secrets
+│   └── cloudwatch
 │       ├── main.tf
 │       ├── outputs.tf
 │       └── variables.tf
+|
 ├── main.tf
 ├── outputs.tf
 ├── provider.tf
@@ -66,8 +63,6 @@ This repository contains a Terraform script to automate the deployment of infras
 
    - CloudWatch Module: Monitors the health and performance of EC2 instances. It creates alarms for CPU usage and integrates with the SNS module for notification.
    
-   - Secrets MOdule : Handling the secrets of our RDS Database to avoid hard code the credientials in the terraform code. 
-
 
 
 ## Resources Created
